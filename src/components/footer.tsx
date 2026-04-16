@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Linkedin, Twitter, Send } from "lucide-react";
 import logo from "../assets/images/mahitylogo.png";
 
-// Custom Link component that works with or without React Router
+
 interface SmartLinkProps {
   to: string;
   children: React.ReactNode;
@@ -37,10 +37,10 @@ export default function Footer() {
 
   return (
     <footer className="bg-gray-900 text-gray-300 border-t border-gray-800">
-      {/* Main Footer Content */}
+      
       <div className="max-w-7xl mx-auto px-6 py-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
-          {/* Left Section: Brand & Action (Takes 4 columns) */}
+          
           <div className="lg:col-span-4 space-y-6">
             <img src={logo} alt="Mahity Logo" className="h-16 w-auto mb-4" />
 
@@ -97,10 +97,10 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Right Section: Three Equal Columns (Takes 8 columns) */}
+          
           <div className="lg:col-span-8">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-              {/* Column 1: Platform */}
+             
               <div>
                 <h3 className="text-white font-semibold mb-6 text-lg">Platform</h3>
                 <ul className="space-y-3">
@@ -132,7 +132,7 @@ export default function Footer() {
                 </ul>
               </div>
 
-              {/* Column 2: Resources */}
+          
               <div>
                 <h3 className="text-white font-semibold mb-6 text-lg">Resources</h3>
                 <ul className="space-y-3">
@@ -164,7 +164,7 @@ export default function Footer() {
                 </ul>
               </div>
 
-              {/* Column 3: Company */}
+              
               <div>
                 <h3 className="text-white font-semibold mb-6 text-lg">Company</h3>
                 <ul className="space-y-3">
@@ -201,10 +201,10 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Divider */}
+     
       <div className="border-t border-gray-800"></div>
 
-      {/* Bottom Bar */}
+    
       <div className="max-w-7xl mx-auto px-6 py-6">
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
           <div className="text-gray-400">
@@ -214,9 +214,13 @@ export default function Footer() {
             <SmartLink to="/privacy-policy" className="hover:text-white transition-colors">
               Privacy Policy
             </SmartLink>
+            <SmartLink to="/refund-policy" className="hover:text-white transition-colors">
+              Refund Policy
+            </SmartLink>
             <SmartLink to="/terms-of-use" className="hover:text-white transition-colors">
               Terms of Service
             </SmartLink>
+             
             <SmartLink to="/cookie-settings" className="hover:text-white transition-colors">
               Cookie Settings
             </SmartLink>

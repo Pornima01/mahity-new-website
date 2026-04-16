@@ -7,7 +7,7 @@ body {
   color: white;
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .hero-gradient-text {
@@ -34,7 +34,7 @@ body {
 }
 
 
-/* Shimmer animation for buttons */
+
 @keyframes shimmer {
   0% {
     background-position: 200% 0;
@@ -48,7 +48,7 @@ body {
   animation: shimmer 3s linear infinite;
 }
 
-/* Pulse animation with slower timing */
+
 @keyframes pulse-slow {
   0%, 100% {
     opacity: 1;
@@ -62,12 +62,11 @@ body {
   animation: pulse-slow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
-/* Smooth scroll behavior */
+
 html {
   scroll-behavior: smooth;
 }
 
-/* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 5px;
 }
@@ -83,4 +82,23 @@ html {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #ffb84d;
+}
+
+
+
+.sidebar-scroll::-webkit-scrollbar {
+  width: 2px;
+}
+
+.sidebar-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.sidebar-scroll::-webkit-scrollbar-thumb {
+  background: rgba(255, 159, 26, 0.4);
+  border-radius: 999px;
+}
+
+.sidebar-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 159, 26, 0.8);
 }

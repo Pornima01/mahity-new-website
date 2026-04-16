@@ -2,13 +2,15 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const { ModuleFederationPlugin } = require("webpack").container;
+const webpack = require("webpack");
+require("dotenv").config();
 
 module.exports = {
   entry: "./src/index.tsx",
   output: {
     filename: "[name].[contenthash].js",
     path: path.resolve(__dirname, "dist"),
-    publicPath: "auto",
+    publicPath: "/",
     uniqueName: "devlake_settings_blueprints",
   },
   resolve: {
@@ -47,6 +49,7 @@ module.exports = {
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: "./public/index.html",
+      favicon: "./src/assets/images/favicon.ico",
     }),
     new ModuleFederationPlugin({
       name: "devlake_settings_blueprints",
@@ -63,13 +66,18 @@ module.exports = {
         },
       },
     }),
+   new webpack.DefinePlugin({
+  "process.env.STRAPI_URL": JSON.stringify(
+    process.env.STRAPI_URL
+  ),
+}),
   ],
   devServer: {
     static: "./dist",
     hot: false,
     liveReload: true,
     historyApiFallback: true,
-    port: 3005,
+    port: 3022,
     open: false,
   },
   mode: "development",

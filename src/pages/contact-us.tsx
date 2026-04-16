@@ -3,7 +3,7 @@ import heroBackgroundImage from "../assets/images/contact-us-hero-bg.png";
 
     
 
-    // Copy Icon Component
+  
     const CopyIcon = ({ className }: { className?: string }) => (
     <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
@@ -11,103 +11,107 @@ import heroBackgroundImage from "../assets/images/contact-us-hero-bg.png";
     </svg>
     );
 
-    // Check Icon Component
+   
     const CheckIcon = ({ className }: { className?: string }) => (
     <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <polyline points="20 6 9 17 4 12"/>
     </svg>
     );
 
-    // Shared Location Section Component
-    const LocationSection = () => {
-    const [openSection, setOpenSection] = useState<string>("");
+   const LocationSection = () => {
+  return (
+    <div className="bg-[#050505] px-4 md:px-6 lg:px-12 py-8 md:py-16 border-t border-gray-800">
+      <div className="max-w-7xl mx-auto">
 
-    return (
-        <div className="bg-[#050505] px-4 md:px-6 lg:px-12 py-8 md:py-16 border-t border-gray-800">
-        <div className="max-w-7xl mx-auto">
-            {/* Updated Layout: Heading on Left, Accordion on Right */}
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8 items-start">
-            {/* Left Side - Heading */}
-            <div className="lg:col-span-1">
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white">
-                Locations
-                </h2>
-            </div>
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-8 md:mb-12 text-center">
+  Locations
+</h2>
 
-            {/* Right Side - Accordion */}
-            <div className="lg:col-span-2">
-                <div className="bg-gray-800/50 border border-gray-700 rounded-lg overflow-hidden">
-                {/* Global Headquarters */}
-                <div className="border-b border-gray-700 last:border-b-0">
-                    <button
-                    onClick={() => setOpenSection(openSection === "headquarters" ? "" : "headquarters")}
-                    className="w-full px-4 md:px-6 py-4 flex items-center justify-between hover:bg-gray-800 transition-colors"
-                    >
-                    <span className="text-lg md:text-xl font-semibold text-white">Headquarters</span>
-                    <svg
-                        className={`w-5 h-5 md:w-6 md:h-6 text-gray-400 transition-transform ${openSection === "headquarters" ? "rotate-180" : ""}`}
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                    >
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
-                    </svg>
-                    </button>
-                    {openSection === "headquarters" && (
-                    <div className="px-4 md:px-6 py-4 md:py-6 bg-gray-900/50">
-                        <div className="mb-4 md:mb-6">
-                        <p className="text-white font-bold mb-2">Mahity Systems</p>
-                        <p className="text-sm md:text-base text-gray-400 mb-1">G-Square Business Park, 1102</p>
-                        <p className="text-sm md:text-base text-gray-400 mb-1">Opp. Sanpada Railway Station Road, Sector 30A</p>
-                        <p className="text-sm md:text-base text-gray-400 mb-1">Vashi, Navi Mumbai</p>
-                        <p className="text-sm md:text-base text-gray-400 mb-1">Maharashtra 400703</p>
-                        <p className="text-sm md:text-base text-gray-400">India</p>
-                        </div>
-                        
-                        <div>
-                        <p className="text-white font-bold mb-2">Mailing Address</p>
-                        <p className="text-sm md:text-base text-gray-400 mb-1">MAHITY SYSTEMS LLC</p>
-                        <p className="text-sm md:text-base text-gray-400 mb-1">SPENCER SCHNEIER SOLE MBR</p>
-                        <p className="text-sm md:text-base text-gray-400 mb-1">30 N GOULD ST STE R</p>
-                        <p className="text-sm md:text-base text-gray-400 mb-1">Sheridan, WY 82801</p>
-                        <p className="text-sm md:text-base text-gray-400">United States</p>
-                        </div>
-                    </div>
-                    )}
-                </div>
-                </div>
-            </div>
-            </div>
+       
+        <div className="flex flex-col md:flex-row justify-center md:items-stretch gap-6 md:gap-10">
 
-            {/* Fraud Warning */}
-            <div className="mt-8 md:mt-14 border border-[#ff9f1a] p-3 md:p-4 rounded-lg bg-gray-800/50">
-            <p className="text-xs md:text-sm lg:text-base text-gray-300">
-                <span className="font-semibold text-white">Note*</span>
-                <br />
-                Mahity does not charge any fees for job applications or
-                processing. Please be cautious of fraudsters and do not fall for
-                any scams. If you encounter suspicious activity, report it to us
-                immediately via mail –{" "}
-                <a
-                href="mailto:careers@mahity.com"
-                className="text-[#ff9f1a] hover:underline"
-                >
-                careers@mahity.com
-                </a>
-            </p>
+         
+          <div className="bg-gray-800/50 border border-gray-700 hover:border-[#ff9f1a] transition-all duration-300 rounded-xl p-6 flex flex-col gap-2 w-full md:w-96 md:h-72 justify-between">
+            <div className="flex items-center gap-2 mb-1">
+              <span className="text-[#ff9f1a] text-[10px] font-bold uppercase tracking-widest">Sales Office</span>
             </div>
+            <h3 className="text-white font-bold text-lg md:text-xl">SANPADA OFFICE</h3>
+            <div className="text-gray-400 text-xs md:text-sm leading-relaxed space-y-0.5">
+              <p>G-Square Business Park, 1102</p>
+              <p>Opp. Sanpada Railway Station Road, Sector 30A</p>
+              <p>Vashi, Navi Mumbai</p>
+              <p>Maharashtra 400703</p>
+              <p>India</p>
+            </div>
+            <a
+              href="https://maps.app.goo.gl/yW4yTDEpAStJsYFi7"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 mt-1 text-[#1e82d4] text-xs font-semibold hover:text-[#489ee4] transition-colors"
+            >
+              <svg className="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+              View on Google Maps
+            </a>
+          </div>
+
+          
+          <div className="bg-gray-800/50 border border-gray-700 hover:border-[#ff9f1a] transition-all duration-300 rounded-xl p-6 flex flex-col gap-2 w-full md:w-96 md:h-72 justify-between">
+            <div className="flex items-center gap-2 mb-1">
+              <span className="text-[#ff9f1a] text-[10px] font-bold uppercase tracking-widest">Registered Office</span>
+            </div>
+            <h3 className="text-white font-bold text-lg md:text-xl">VASHI OFFICE</h3>
+            <div className="text-gray-400 text-xs md:text-sm leading-relaxed space-y-0.5">
+              <p>Corporate Wing 2nd Floor, Office No S-178</p>
+              <p>Fantasia Business Park, Plot No 47</p>
+              <p>Sector 30A, Vashi, Navi Mumbai</p>
+              <p>Thane - 400703</p>
+              <p>Maharashtra, India</p>
+            </div>
+            <a
+              href="https://maps.app.goo.gl/8by9uESVJygSi6QN8"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 mt-1 text-[#1e82d4] text-xs font-semibold hover:text-[#489ee4] transition-colors"
+            >
+              <svg className="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+              View on Google Maps
+            </a>
+          </div>
+
         </div>
+
+        
+        <div className="mt-8 md:mt-14 border border-[#ff9f1a] p-3 md:p-4 rounded-lg bg-gray-800/50">
+          <p className="text-xs md:text-sm lg:text-base text-gray-300">
+            <span className="font-semibold text-white">Note*</span>
+            <br />
+            Mahity does not charge any fees for job applications or processing. Please be cautious of
+            fraudsters and do not fall for any scams. If you encounter suspicious activity, report it
+            to us immediately via mail –{" "}
+            <a href="mailto:careers@mahity.com" className="text-[#ff9f1a] hover:underline">
+              careers@mahity.com
+            </a>
+          </p>
         </div>
-    );
-    };
+
+      </div>
+    </div>
+  );
+};
 
     function ContactUs() {
-    const [activeTab, setActiveTab] = useState<"sales" | "support" | "careers">("sales");
+    const [activeTab, setActiveTab] = useState<"sales" | "careers">("sales");
     const [isVisible, setIsVisible] = useState(false);
     const [copiedEmail, setCopiedEmail] = useState(false);
     const [copiedPhone, setCopiedPhone] = useState(false);
 
-    // Sales Form State
+    
     const [salesFormData, setSalesFormData] = useState({
         firstName: "",
         lastName: "",
@@ -124,7 +128,7 @@ import heroBackgroundImage from "../assets/images/contact-us-hero-bg.png";
         message?: string;
     }>({});
 
-    // Careers Form State
+  
     const [careersFormData, setCareersFormData] = useState({
         firstName: "",
         lastName: "",
@@ -159,7 +163,7 @@ import heroBackgroundImage from "../assets/images/contact-us-hero-bg.png";
         setTimeout(() => setIsVisible(true), 100);
     }, []);
 
-    // Copy to clipboard function
+    
     const copyToClipboard = (text: string, type: "email" | "phone") => {
         navigator.clipboard.writeText(text);
         if (type === "email") {
@@ -171,7 +175,7 @@ import heroBackgroundImage from "../assets/images/contact-us-hero-bg.png";
         }
     };
 
-    // Sales Form Handlers
+    
     const handleSalesChange = (
         e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
     ) => {
@@ -262,7 +266,7 @@ import heroBackgroundImage from "../assets/images/contact-us-hero-bg.png";
         }
     };
 
-    // Careers Form Handlers
+    
     const handleCareersInputChange = (
         e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
     ) => {
@@ -416,7 +420,7 @@ import heroBackgroundImage from "../assets/images/contact-us-hero-bg.png";
             .animate-bounceIn { animation: bounceIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
         `}</style>
 
-        {/* Hero Section with Background Image */}
+       
         <div 
             className="py-16 md:py-20 lg:py-24 px-4 border-b border-gray-800 relative overflow-hidden"
            style={{
@@ -425,7 +429,7 @@ import heroBackgroundImage from "../assets/images/contact-us-hero-bg.png";
   backgroundPosition: 'center',
 }}
         >
-            {/* Overlay for better text readability */}
+           
             <div className="absolute inset-0 bg-gray-900/80"></div>
             
             <div className="max-w-7xl mx-auto text-center relative z-10 pt-4 md:pt-6">
@@ -438,7 +442,7 @@ import heroBackgroundImage from "../assets/images/contact-us-hero-bg.png";
             </div>
         </div>
 
-        {/* Updated Tabs Section with Pointer - Mobile Responsive */}
+        
         <div className="border-b border-gray-800 sticky top-0 z-40 bg-[#050505]">
             <div className="max-w-7xl mx-auto">
             <div className="flex justify-center gap-4 sm:gap-8 md:gap-16 lg:gap-48">
@@ -457,7 +461,7 @@ import heroBackgroundImage from "../assets/images/contact-us-hero-bg.png";
                 )}
                 </button>
                 
-                <button
+                {/* <button
                 onClick={() => setActiveTab("support")}
                 className="relative px-4 sm:px-8 md:px-12 lg:px-14 py-4 md:py-6 text-base md:text-lg font-semibold transition-all group"
                 >
@@ -470,7 +474,7 @@ import heroBackgroundImage from "../assets/images/contact-us-hero-bg.png";
                     <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-[6px] border-r-[6px] border-t-[6px] md:border-l-8 md:border-r-8 md:border-t-8 border-l-transparent border-r-transparent border-t-[#ff9f1a]"></div>
                     </>
                 )}
-                </button>
+                </button> */}
                 
                 <button
                 onClick={() => setActiveTab("careers")}
@@ -490,15 +494,15 @@ import heroBackgroundImage from "../assets/images/contact-us-hero-bg.png";
             </div>
         </div>
 
-        {/* Tab Content */}
+      
         <div>
-            {/* SALES TAB */}
+            
             {activeTab === "sales" && (
             <div>
-                {/* Contact Form Section */}
+              
                 <div className="px-4 md:px-6 lg:px-12 py-8 md:py-12 bg-[#050505]">
                 <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8">
-                    {/* Left Side - Contact Info */}
+                  
                     <div className="lg:col-span-1">
                     <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 md:mb-6">
                         Contact sales
@@ -525,7 +529,7 @@ import heroBackgroundImage from "../assets/images/contact-us-hero-bg.png";
                     </div>
                     </div>
 
-                    {/* Right Side - Form */}
+                    
                     <div className="lg:col-span-2" style={{ opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(30px)', transition: 'all 1s ease-out' }}>
                     <div className="space-y-4 shadow-2xl px-4 sm:px-6 md:px-8 py-6 md:py-10 border border-gray-700 rounded-lg bg-gray-800/50 hover:border-[#ff9f1a] transition-all duration-500">
                         {isSalesSubmitted ? (
@@ -614,13 +618,13 @@ import heroBackgroundImage from "../assets/images/contact-us-hero-bg.png";
                 </div>
                 </div>
 
-                {/* Location Section */}
+                
                 <LocationSection />
             </div>
             )}
 
             {/* SUPPORT TAB */}
-            {activeTab === "support" && (
+            {/* {activeTab === "support" && (
             <div>
                 <div className="py-12 md:py-16 px-4 bg-[#050505]">
                 <div className="max-w-7xl mx-auto">
@@ -629,9 +633,9 @@ import heroBackgroundImage from "../assets/images/contact-us-hero-bg.png";
                     <p className="text-lg md:text-xl pt-2 md:pt-4 text-gray-400 px-4">Get help from our expert support team</p>
                     </div>
 
-                    {/* Support Contact Cards - Mobile Responsive */}
+                 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-12 md:mb-16 max-w-4xl mx-auto">
-                    {/* Email Support */}
+                   
                     <div className="bg-gray-800/50 p-6 md:p-8 rounded-2xl border border-gray-700 hover:border-[#ff9f1a] transition-all duration-300 transform hover:scale-105">
                         <div className="flex items-center justify-between mb-3 md:mb-4">
                         <h3 className="text-xl md:text-2xl font-bold text-white">Email Support</h3>
@@ -643,7 +647,7 @@ import heroBackgroundImage from "../assets/images/contact-us-hero-bg.png";
                         <a href="mailto:support@mahity.com" className="text-[#ff9f1a] font-bold text-base md:text-lg hover:text-[#ffb84d] transition-colors break-all">support@mahity.com</a>
                     </div>
 
-                    {/* Phone Support */}
+                  
                     <div className="bg-gray-800/50 p-6 md:p-8 rounded-2xl border border-gray-700 hover:border-[#ff9f1a] transition-all duration-300 transform hover:scale-105">
                         <div className="flex items-center justify-between mb-3 md:mb-4">
                         <h3 className="text-xl md:text-2xl font-bold text-white">Phone Support</h3>
@@ -658,12 +662,12 @@ import heroBackgroundImage from "../assets/images/contact-us-hero-bg.png";
                 </div>
                 </div>
 
-                {/* Location Section */}
+              
                 <LocationSection />
             </div>
-            )}
+            )} */}
 
-            {/* CAREERS TAB */}
+           
             {activeTab === "careers" && (
             <div>
                 <div className="bg-[#050505] py-12 md:py-16 px-4">
@@ -692,7 +696,7 @@ import heroBackgroundImage from "../assets/images/contact-us-hero-bg.png";
                     </div>
 
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8">
-                        {/* Left Side - Career Contact Info */}
+                       
                         <div className="lg:col-span-1">
                         <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 md:mb-6">
                             Career Opportunities
@@ -718,7 +722,7 @@ import heroBackgroundImage from "../assets/images/contact-us-hero-bg.png";
                         </div>
                         </div>
 
-                        {/* Right Side - Application Form */}
+                      
                         <div className="lg:col-span-2">
                         <div className="bg-gray-800/50 rounded-2xl border border-gray-700 p-6 md:p-8 lg:p-12 hover:border-[#ff9f1a] transition-all duration-500">
                             <form onSubmit={handleCareersSubmit} className="space-y-5 md:space-y-6">
@@ -827,7 +831,7 @@ import heroBackgroundImage from "../assets/images/contact-us-hero-bg.png";
                 )}
                 </div>
 
-                {/* Location Section */}
+              
                 <LocationSection />
             </div>
             )}
